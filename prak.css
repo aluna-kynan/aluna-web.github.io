@@ -1,0 +1,181 @@
+/* === NAVBAR === */
+.navbar-custom {    
+  position: sticky !important;
+  top: 0;
+  z-index: 1030;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.navbar-custom.scrolled {
+  box-shadow: 0 6px 18px rgba(18, 38, 63, 0.08);
+  transform: none !important; 
+}
+
+.navbar-brand img { 
+  object-fit: cover; 
+}
+
+.navbar-brand .brand-text { 
+  line-height: 1; 
+}
+
+.nav-link { 
+  font-weight: 600; 
+  color: #0b2447; 
+  transition: color .15s ease; 
+}
+
+.nav-link:hover { 
+  color: #0d6efd; 
+}
+
+section {
+  position: relative;
+  overflow: visible;
+}
+
+/* === BANNER === */
+.banner-card { 
+  background: linear-gradient(135deg,#0d6efd22 0%, #6f42c122 100%); 
+  overflow: hidden; 
+}
+.banner-card h1 { 
+  letter-spacing: .6px; 
+}
+
+/* === RIWAYAT PENDIDIKAN === */
+.edu-card { 
+  border-width: 2px !important; 
+  position: relative; 
+  overflow: visible; 
+}
+
+.edu-item { 
+  display: flex; 
+  gap: .75rem; 
+  align-items: center; 
+}
+
+.edu-icon {
+  min-width: 44px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(13,110,253,0.08);
+  color: #0d6efd;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(13,110,253,0.06);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+}
+
+.edu-meta small { 
+  color: #6c757d; 
+}
+
+.edu-card .card {
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s, background .28s;
+  border-radius: 10px;
+}
+.edu-card .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.edu-card.hovered .edu-icon,
+.edu-card .card:hover .edu-icon {
+  transform: translateY(-3px) rotate(-6deg) scale(1.05);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.12);
+}
+
+.edu-card::before {
+  content: "";
+  position: absolute;
+  left: var(--x, -9999px);
+  top: var(--y, -9999px);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(13,110,253,0.12), rgba(13,110,253,0.04) 35%, transparent 60%);
+  opacity: 0;
+  transition: opacity .18s ease;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+.edu-card.hovered::before { 
+  opacity: 1; 
+}
+
+.edu-card .card-body,
+.edu-card .card { 
+  position: relative; 
+  z-index: 2; 
+}
+
+/* === KEAHLIAN === */
+.skill-pill { 
+  display: inline-block; 
+  padding: .4rem .7rem; 
+  border-radius: 999px; 
+  margin: .25rem; 
+  font-weight:600; 
+  background: #eef5ff; 
+  color:#0d6efd; 
+  border:1px solid #cfe3ff; 
+}
+
+/* === ARTIKEL === */
+.articles .card {
+  border: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.articles .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+.article-img { 
+  height: 170px; 
+  object-fit: cover; 
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #0d6efd, #0bfff3);
+  border: none;
+  color: white;
+}
+
+.card-title { 
+  font-weight:700; 
+}
+
+/* === CONTACT === */
+footer { 
+  margin-top: 2.5rem; 
+}
+
+/* === REVEAL ANIMATION === */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: opacity .6s ease, transform .6s ease; 
+}
+.reveal.visible { 
+  opacity: 1; 
+  transform: none; 
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 767px) {
+  .banner-card .col-md-6:last-child { 
+    margin-top: 1rem; 
+    display:flex; 
+    justify-content:center; 
+  }
+  .article-img { 
+    height: 150px; 
+  }
+}
